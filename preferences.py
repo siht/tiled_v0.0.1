@@ -15,6 +15,6 @@ DIRECTION_DOWN = 1
 DIRECTION_LEFT = 2
 DIRECTION_RIGHT = 3
 # time to pass to one sector to another
-MOVING_TIME_SECONDS = .35
+MOVING_TIME_SECONDS = .3
 # frames per second
 FPS = 30

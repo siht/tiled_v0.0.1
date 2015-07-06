@@ -73,15 +73,16 @@ class MainView(AbsListener):
         self.__coord = DummyClass()
         self.__coord.sp = self.getCharactorSprite(charactor)
         self.__coord.x, self.__coord.y = x, y
+        magic = 5 # this variable makes look that movement is fluid
         if direction == pref.DIRECTION_UP:
-            y -= pref.SIZE_TILE
+            y -= pref.SIZE_TILE - magic
         elif direction == pref.DIRECTION_DOWN:
-            y += pref.SIZE_TILE
+            y += pref.SIZE_TILE - magic
         elif direction == pref.DIRECTION_LEFT:
-            x -= pref.SIZE_TILE
+            x -= pref.SIZE_TILE - magic
         elif direction == pref.DIRECTION_RIGHT:
-            x += pref.SIZE_TILE
-        delay = -(pref.MOVING_TIME_SECONDS/2)
+            x += pref.SIZE_TILE - magic
+        delay = -(pref.MOVING_TIME_SECONDS/6) # this variable helps variable magic
         self.tweener.addTween(self.__coord,
                               x=x,
                               y=y,
